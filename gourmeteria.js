@@ -1,11 +1,22 @@
 /*
-30/04 Este programa tem como objetivo auxiliar uma pessoa a fazer chá!
-07/05 Este programa tem como objetivo auxiliar uma pessoa a fazer chá(de vários sabores) ou café(de vários tipos)!
+30/04 Este programa tem como objetivo auxiliar uma pessoa a fazer chá.
+07/05 Agora este programa tem como objetivo auxiliar uma pessoa a fazer chá(de vários sabores) ou café(de vários tipos).
+14/05 Agora o programa tem como objetivo, fazer chás, cafés, bolinhos e pãezinhos.
+21/05 Agora o programa tem como objetivo, calcular quantas calorias o cliente está consumindo.
+28/05 Agora o programa tem como objetivo, calcular o IMC do cliente e recomendar um lanche tendo como base os indices calóricos e o nível de estresse do cliente. Perguntar e guardar o nível de satisfação do cliente após o lanche.
+04/06 Agora o programa deve trabalhar com arquivos CSVs, para ler os tipos de chás, cafés, bolinhos e pãezinhos. Deve também salvar todos os pedidos do cliente em um arquivo JSON.
+11/06 Agora o programa deve substituir todos os arquivos JSONs e CSVs por um banco de dados MySQL. O ORM prisma deve ser utilizado.
+18/06 Utilizando a arquitetura RestFUL(fastifyjs), o programa exportar uma rota/endpoint para disponibilizar todos os seus pedidos.
+25/06 Utilizando a arquitetura RestFUL(fastifyjs), o programa deve consumir todos os pedidos das gourmeterias parceiras.
+02/07 Utilizando a lógica fuzzy, deve-se montar uma base de dados com 1 milhão de pedidos. A base de dados original, deve conter 20 pedidos, de 3 clientes especificos. 
+09/07 Utilizando algoritmos genéticos, deve-se recomendar um lanche ótimo ao cliente.
+16/07 Utilizando deep learning(tensorflowjs), deve-se recomendar um lanche ótimo ao cliente.
+23/07 Utilizando deep learning(tensorflowjs), deve-se detectar o risco de obesidade, anemia e anorexia de um cliente.
 @author Marcelo M. Fleury
 */
 const prompt = require('prompt-sync')();
 
-function fazerCha() {
+function fazerBebida() {
   let nome = apresentacaoEPegarNome();
   let dadosPreparo;
   let adoca;
@@ -64,13 +75,13 @@ function finalizar(nome, dadosPreparo) {
 }
 
 function main() {
-  let isCha = true;
+  let isPreparar = true;
   let continuarFazendo;
-  while(isCha) {
-    fazerCha();
+  while(isPreparar) {
+    fazerBebida();
     continuarFazendo = prompt("Deseja fazer outro chá ? ")
     if(continuarFazendo.toLowerCase() == 'não' || continuarFazendo.toLowerCase() == 'n') 
-      isCha = false
+      isPreparar = false
   }
   console.log("Obrigado! Volte sempre :)")
 }
